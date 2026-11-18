@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Header } from './components/Header';
-import { ListContent } from '../../website-builder-1/src/content';
+import { ListContent } from './components/Content';
 import { Footer } from './components/Footer';
 
 function App() {
