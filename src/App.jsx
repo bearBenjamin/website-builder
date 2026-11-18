@@ -1,4 +1,7 @@
 import { useState } from 'react'
+import { Header } from './components/Header';
+import { ListContent } from '../../website-builder-1/src/content';
+import { Footer } from './components/Footer';
 
 function App() {
   const [grid, setGrid] = useState('landing');
@@ -63,7 +66,9 @@ function App() {
       </form>
 
       <div className={`layout layout--${grid}`}>
-        { /* Components - Header, Content, Footer */ }
+          <Header key={`header-${grid}`} />
+          <ListContent grid={grid} />
+          <Footer key={`footer-${grid}`} />
       </div>
     </div>
   )
