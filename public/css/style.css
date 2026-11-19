@@ -1215,9 +1215,9 @@ button,
   height: 532px;
 }
 
-.content .add-img-btn {
+/* .content .add-img-btn {
   display: none;
-}
+} */
 
 .content .img-upload {
   display: block;

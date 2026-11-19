@@ -1,12 +1,24 @@
-function AddMenu({isOpen}) {
+const ELEMENTS_TYPE = [
+  { type: 'h1', label: 'Заголовок H1' },
+  { type: 'h2', label: 'Заголовок H2' },
+  { type: 'h3', label: 'Заголовок H3' },
+  { type: 'p', label: 'Абзац текста' },
+  { type: 'img', label: 'Изображение' }
+]
+
+function AddMenu({isOpen, onBtnClick}) {
   return (
       <div className={`choose-elem ${!isOpen ? 'choose-elem--hide' : ''}`}>
-          <button type="button" className="choose-elem__btn">Заголовок H1</button>
-          <button type="button" className="choose-elem__btn">Заголовок H2</button>
-          <button type="button" className="choose-elem__btn">Заголовок H3</button>
-          <button type="button" className="choose-elem__btn">Абзац текста</button>
-          <button type="button" className="choose-elem__btn">Изображение</button>
-        </div>
+        {ELEMENTS_TYPE.map(({type, label}) => (
+          <button
+            key={type}
+            type="button"
+            className="choose-elem__btn"
+            onClick={() => onBtnClick(type)}>
+              {label}
+            </button>
+        ))}
+      </div>
   )
 }
 
